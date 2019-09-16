@@ -86,7 +86,7 @@ Homer Simpson
 
 5.  The cinema is showing 'Batman Begins', but Batman is DC, not Marvel! Delete the entry from the 'movies' table.
 
-DELETE FROM movies 
+DELETE FROM movies
 WHERE id = 9
 
 DELETE 1
@@ -126,17 +126,25 @@ UPDATE 1
 
 1.  Research how to delete multiple entries from your table in a single command.
 
-Option: delete by value in a column
-
+<!-- Option: delete by value in a column -->
 DELETE FROM movies
 WHERE year = 2008
 
-DELETE 2
+Result: DELETE 2
 
-Option: delete all
+<!-- Option: delete a range by index number -->
+DELETE FROM movies
+WHERE id BETWEEN 10 AND 12
 
-DELETE FROM movies 
+Result: DELETE 3
 
-would delete all movies - I did not execute this option
+<!-- Option: delete by index number not in a range -->
+DELETE FROM movies
+WHERE id NOT BETWEEN 1 AND 17
 
+Result: DELETE 3
 
+<!-- Option: delete all -->
+DELETE FROM movies
+
+Result: This would delete all movies without deleting the table itself - I did not execute this option
